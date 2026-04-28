@@ -49,17 +49,16 @@ const getDeviceType = (): "mobile" | "desktop" => {
 export const trackEvent = (
   name: AnalyticsEventName,
   payload: AnalyticsPayload = {},
-) => {
-  if (typeof window === "undefined") return;
+): Promise<void> => {
+  if (typeof window === "undefined") return Promise.resolve();
 
   const supabase = getClient();
-  if (!supabase) return;
+  if (!supabase) return Promise.resolve();
 
   const { persona, question, option, ...rest } = payload;
 
-  void supabase
-    .from("quiz_events")
-    .insert({
+  return Promise.resolve(
+    supabase.from("quiz_events").insert({
       session_id: getSessionId(),
       event_name: name,
       persona_id: typeof persona === "string" ? persona : null,
@@ -67,10 +66,10 @@ export const trackEvent = (
       option_id: typeof option === "string" ? option : null,
       device_type: getDeviceType(),
       meta: Object.keys(rest).length ? rest : null,
-    })
-    .then(({ error }) => {
-      if (error && process.env.NODE_ENV !== "production") {
-        console.warn("[analytics] insert failed", error.message);
-      }
-    });
+    }),
+  ).then(({ error }) => {
+    if (error && process.env.NODE_ENV !== "production") {
+      console.warn("[analytics] insert failed", error.message);
+    }
+  });
 };
