@@ -42,7 +42,11 @@ export function QuizApp() {
 
     if (questionIndex === questions.length - 1) {
       setView("result");
-      trackEvent("quiz_completed", { questions: questions.length });
+      const finalResult = calculateResult(nextAnswers);
+      trackEvent("quiz_completed", {
+        persona: finalResult.personaId,
+        questions: questions.length,
+      });
       return;
     }
 
@@ -66,23 +70,23 @@ export function QuizApp() {
     const progress = ((questionIndex + 1) / questions.length) * 100;
 
     return (
-      <section className="mx-auto w-full max-w-3xl rounded-[2rem] border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/70 sm:p-8">
+      <section className="mx-auto w-full max-w-3xl rounded-[2rem] border border-[#251b29]/10 bg-[var(--brand-polar)] p-5 shadow-xl shadow-[#251b29]/5 sm:p-8">
         <div className="mb-8">
-          <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
+          <div className="flex items-center justify-between text-sm font-semibold text-[var(--brand-ink)]/60">
             <span>
               Question {questionIndex + 1} of {questions.length}
             </span>
             <span>No grades. Very scientific.</span>
           </div>
-          <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div className="mt-3 h-2 overflow-hidden rounded-full bg-[var(--brand-cloud)]">
             <div
-              className="h-full rounded-full bg-indigo-500 transition-all"
+              className="h-full rounded-full bg-[var(--brand-orange)] transition-all"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
-        <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+        <h1 className="font-[family-name:var(--font-montserrat)] text-3xl font-extrabold tracking-tight text-[var(--brand-ink)] sm:text-4xl">
           {currentQuestion.prompt}
         </h1>
 
@@ -97,8 +101,8 @@ export function QuizApp() {
                 onClick={() => selectAnswer(option.id)}
                 className={`rounded-2xl border p-4 text-left text-base font-semibold transition sm:p-5 ${
                   isSelected
-                    ? "border-indigo-500 bg-indigo-50 text-indigo-800"
-                    : "border-slate-200 bg-white text-slate-800 hover:border-indigo-300 hover:bg-indigo-50/60"
+                    ? "border-[var(--brand-orange)] bg-[var(--brand-orange-soft)] text-[var(--brand-ink)]"
+                    : "border-[#251b29]/12 bg-[var(--brand-polar)] text-[var(--brand-ink)] hover:border-[var(--brand-orange)]/60 hover:bg-[var(--brand-orange-soft)]/40"
                 }`}
               >
                 {option.text}
@@ -111,11 +115,11 @@ export function QuizApp() {
           <button
             type="button"
             onClick={goBack}
-            className="rounded-full px-4 py-2 font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
+            className="rounded-full px-4 py-2 font-semibold text-[var(--brand-ink)]/70 transition hover:bg-[var(--brand-cloud)] hover:text-[var(--brand-ink)]"
           >
             Back
           </button>
-          <p className="text-sm text-slate-500">Pick your honest chaos.</p>
+          <p className="text-sm text-[var(--brand-ink)]/60">Pick your honest chaos.</p>
         </div>
       </section>
     );
