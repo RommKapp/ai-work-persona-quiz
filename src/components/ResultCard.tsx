@@ -96,7 +96,7 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
       </div>
 
       <div className="rounded-[2rem] border border-[#251b29]/10 bg-[var(--brand-polar)] p-6 shadow-xl shadow-[#251b29]/5 sm:p-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-orange)]">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-orange-deep)]">
           You are
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-montserrat)] text-4xl font-extrabold tracking-tight text-[var(--brand-ink)] sm:text-5xl">
@@ -181,7 +181,7 @@ function TagList({ title, items }: { title: string; items: string[] }) {
         {items.map((item) => (
           <span
             key={item}
-            className="rounded-full bg-[var(--brand-orange-soft)] px-3 py-1 text-sm font-medium text-[var(--brand-orange)]"
+            className="rounded-full bg-[var(--brand-orange-soft)] px-3 py-1 text-sm font-semibold text-[var(--brand-orange-deep)]"
           >
             {item}
           </span>

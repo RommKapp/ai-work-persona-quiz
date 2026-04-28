@@ -128,7 +128,7 @@ export function QuizApp() {
   return (
     <section className="mx-auto grid w-full max-w-6xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
-        <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-[var(--brand-orange-soft)] px-4 py-2 text-sm font-bold uppercase tracking-[0.14em] text-[var(--brand-orange)]">
+        <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-[var(--brand-orange-soft)] px-4 py-2 text-sm font-bold uppercase tracking-[0.14em] text-[var(--brand-orange-deep)]">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-orange)]" />
           Internal Gcore quiz
         </p>

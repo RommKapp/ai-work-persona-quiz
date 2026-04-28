@@ -4,6 +4,7 @@
   --background: #fff3eb;
   --foreground: #251b29;
   --brand-orange: #ff4c00;
+  --brand-orange-deep: #b13100;
   --brand-orange-soft: #ffe5d6;
   --brand-purple: #251b29;
   --brand-cloud: #fff3eb;
@@ -14,6 +15,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand: var(--brand-orange);
+  --color-brand-deep: var(--brand-orange-deep);
   --color-brand-soft: var(--brand-orange-soft);
   --color-brand-ink: var(--brand-purple);
   --color-brand-cloud: var(--brand-cloud);
