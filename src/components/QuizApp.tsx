@@ -34,7 +34,7 @@ export function QuizApp() {
     ];
 
     setAnswers(nextAnswers);
-    trackEvent("answer_selected", {
+    const answerTracked = trackEvent("answer_selected", {
       question: currentQuestion.id,
       option: optionId,
       step: questionIndex + 1,
@@ -43,10 +43,12 @@ export function QuizApp() {
     if (questionIndex === questions.length - 1) {
       setView("result");
       const finalResult = calculateResult(nextAnswers);
-      trackEvent("quiz_completed", {
-        persona: finalResult.personaId,
-        questions: questions.length,
-      });
+      void answerTracked.then(() =>
+        trackEvent("quiz_completed", {
+          persona: finalResult.personaId,
+          questions: questions.length,
+        }),
+      );
       return;
     }
 
