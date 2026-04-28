@@ -128,18 +128,19 @@ export function QuizApp() {
   return (
     <section className="mx-auto grid w-full max-w-6xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
-        <p className="mb-4 w-fit rounded-full bg-indigo-100 px-4 py-2 text-sm font-bold text-indigo-700">
-          Fun internal quiz
+        <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-[var(--brand-orange-soft)] px-4 py-2 text-sm font-bold uppercase tracking-[0.14em] text-[var(--brand-orange)]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-orange)]" />
+          Internal Gcore quiz
         </p>
-        <h1 className="text-5xl font-black tracking-tight text-slate-950 sm:text-6xl">
+        <h1 className="font-[family-name:var(--font-montserrat)] text-5xl font-extrabold tracking-tight text-[var(--brand-ink)] sm:text-6xl">
           What is your AI Work Persona?
         </h1>
-        <p className="mt-6 max-w-xl text-xl leading-8 text-slate-600">
+        <p className="mt-6 max-w-xl text-xl leading-8 text-[var(--brand-ink)]/80">
           12 questions. 3 minutes. No grades, no manager dashboard, no deep
           judgment from a spreadsheet. Find your AI work style and a few tools
           to try next.
         </p>
-        <p className="mt-4 max-w-xl text-sm leading-6 text-slate-500">
+        <p className="mt-4 max-w-xl text-sm leading-6 text-[var(--brand-ink)]/60">
           This quiz is for fun and learning. It is not a performance assessment,
           even if the button looks confident. We collect anonymous responses to
           improve the program — no names, no emails.
@@ -147,15 +148,15 @@ export function QuizApp() {
         <button
           type="button"
           onClick={startQuiz}
-          className="mt-8 rounded-full bg-slate-950 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-slate-300 transition hover:-translate-y-0.5 hover:bg-slate-800"
+          className="mt-8 rounded-full bg-[var(--brand-orange)] px-8 py-4 text-lg font-bold text-white shadow-lg shadow-[#ff4c00]/25 transition hover:-translate-y-0.5 hover:bg-[#e64500]"
         >
           Start the very serious quiz
         </button>
       </div>
 
-      <div className="rounded-[2rem] border border-white/70 bg-white/80 p-4 shadow-xl shadow-slate-200/70">
-        <div className="rounded-[1.5rem] bg-gradient-to-br from-indigo-200 via-sky-200 to-lime-200 p-6 text-slate-950">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em]">
+      <div className="rounded-[2rem] border border-[#251b29]/10 bg-[var(--brand-polar)] p-4 shadow-xl shadow-[#251b29]/5">
+        <div className="rounded-[1.5rem] bg-[var(--brand-ink)] p-6 text-[var(--brand-cloud)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-orange)]">
             Possible results, allegedly
           </p>
           <div className="mt-6 grid gap-3">
@@ -169,7 +170,10 @@ export function QuizApp() {
               "Thinking Partner",
               "Tool Explorer",
             ].map((name) => (
-              <div key={name} className="rounded-2xl bg-white/65 p-3 font-bold">
+              <div
+                key={name}
+                className="rounded-2xl bg-white/5 p-3 font-bold ring-1 ring-white/10 backdrop-blur-sm"
+              >
                 {name}
               </div>
             ))}

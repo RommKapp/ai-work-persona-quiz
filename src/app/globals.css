@@ -1,21 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #fff3eb;
+  --foreground: #251b29;
+  --brand-orange: #ff4c00;
+  --brand-orange-soft: #ffe5d6;
+  --brand-purple: #251b29;
+  --brand-cloud: #fff3eb;
+  --brand-polar: #fffef8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand-orange);
+  --color-brand-soft: var(--brand-orange-soft);
+  --color-brand-ink: var(--brand-purple);
+  --color-brand-cloud: var(--brand-cloud);
+  --color-brand-polar: var(--brand-polar);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-montserrat);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Inter, Arial, Helvetica, sans-serif;
 }
 
 button,

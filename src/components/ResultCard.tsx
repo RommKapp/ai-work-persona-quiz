@@ -62,14 +62,15 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
 
   return (
     <section className="mx-auto grid w-full max-w-5xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-      <div className="rounded-[2rem] border border-white/70 bg-white/80 p-4 shadow-xl shadow-slate-200/70">
+      <div className="rounded-[2rem] border border-[#251b29]/10 bg-[var(--brand-polar)] p-4 shadow-xl shadow-[#251b29]/5">
         <div
           ref={shareCardRef}
           className={`flex aspect-square flex-col justify-between overflow-hidden rounded-[1.5rem] bg-gradient-to-br ${persona.accent} p-6 text-slate-950`}
           data-image-path={persona.imagePath}
         >
-          <span className="w-fit rounded-full bg-white/70 px-3 py-1 text-sm font-semibold">
-            AI Work Persona
+          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-sm font-semibold">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#ff4c00]" />
+            Gcore · AI Work Persona
           </span>
           <Image
             src={persona.imagePath}
@@ -94,15 +95,15 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
         </div>
       </div>
 
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70 sm:p-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">
+      <div className="rounded-[2rem] border border-[#251b29]/10 bg-[var(--brand-polar)] p-6 shadow-xl shadow-[#251b29]/5 sm:p-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-orange)]">
           You are
         </p>
-        <h1 className="mt-2 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+        <h1 className="mt-2 font-[family-name:var(--font-montserrat)] text-4xl font-extrabold tracking-tight text-[var(--brand-ink)] sm:text-5xl">
           {persona.name}
         </h1>
-        <p className="mt-3 text-lg font-medium text-slate-700">{persona.meaning}</p>
-        <p className="mt-5 text-base leading-7 text-slate-600">{persona.description}</p>
+        <p className="mt-3 text-lg font-medium text-[var(--brand-ink)]/80">{persona.meaning}</p>
+        <p className="mt-5 text-base leading-7 text-[var(--brand-ink)]/70">{persona.description}</p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <InfoBlock title="Your superpower" text={persona.superpower} />
@@ -114,44 +115,46 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
           <TagList title="Tools to explore" items={result.recommendedTools} />
         </div>
 
-        <div className="mt-8 rounded-2xl bg-slate-100 p-4">
-          <p className="text-sm font-semibold text-slate-500">Share in Slack</p>
-          <p className="mt-2 text-slate-800">{persona.shareText}</p>
+        <div className="mt-8 rounded-2xl bg-[var(--brand-cloud)] p-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--brand-ink)]/60">
+            Share in Slack
+          </p>
+          <p className="mt-2 text-[var(--brand-ink)]">{persona.shareText}</p>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <button
             type="button"
             onClick={copyShareText}
-            className="rounded-full bg-slate-950 px-6 py-3 font-semibold text-white transition hover:bg-slate-800"
+            className="rounded-full bg-[var(--brand-orange)] px-6 py-3 font-semibold text-white shadow-lg shadow-[#ff4c00]/20 transition hover:bg-[#e64500]"
           >
             {copied ? "Copied for Slack" : "Copy Slack text"}
           </button>
           <button
             type="button"
             onClick={copyResultImage}
-            className="rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-950"
+            className="rounded-full border border-[#251b29]/15 bg-[var(--brand-polar)] px-6 py-3 font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)]"
           >
             {imageCopied ? "Image copied" : "Copy result image"}
           </button>
           <button
             type="button"
             onClick={downloadResultImage}
-            className="rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-950"
+            className="rounded-full border border-[#251b29]/15 bg-[var(--brand-polar)] px-6 py-3 font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)]"
           >
             {imageSaved ? "Image saved" : "Download image"}
           </button>
           <a
             href="#try-next"
             onClick={() => trackEvent("learning_link_clicked", { persona: persona.id })}
-            className="rounded-full border border-slate-300 px-6 py-3 text-center font-semibold text-slate-800 transition hover:border-slate-950"
+            className="rounded-full border border-[#251b29]/15 bg-[var(--brand-polar)] px-6 py-3 text-center font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)]"
           >
             See learning ideas
           </a>
           <button
             type="button"
             onClick={onRestart}
-            className="rounded-full px-6 py-3 font-semibold text-slate-600 transition hover:text-slate-950"
+            className="rounded-full px-6 py-3 font-semibold text-[var(--brand-ink)]/60 transition hover:text-[var(--brand-ink)]"
           >
             Retake quiz
           </button>
@@ -163,9 +166,9 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
 
 function InfoBlock({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-slate-200 p-4">
-      <h3 className="font-bold text-slate-950">{title}</h3>
-      <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
+    <div className="rounded-2xl border border-[#251b29]/12 p-4">
+      <h3 className="font-bold text-[var(--brand-ink)]">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-[var(--brand-ink)]/70">{text}</p>
     </div>
   );
 }
@@ -173,12 +176,12 @@ function InfoBlock({ title, text }: { title: string; text: string }) {
 function TagList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h3 className="font-bold text-slate-950">{title}</h3>
+      <h3 className="font-bold text-[var(--brand-ink)]">{title}</h3>
       <div className="mt-3 flex flex-wrap gap-2">
         {items.map((item) => (
           <span
             key={item}
-            className="rounded-full bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700"
+            className="rounded-full bg-[var(--brand-orange-soft)] px-3 py-1 text-sm font-medium text-[var(--brand-orange)]"
           >
             {item}
           </span>
