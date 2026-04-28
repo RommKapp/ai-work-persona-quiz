@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+import { withBasePath } from "@/lib/asset-path";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,9 +34,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[var(--brand-cloud)] text-[var(--brand-ink)]">
         <header className="border-b border-[#251b29]/10 bg-[var(--brand-polar)]">
           <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-            <a href="/" aria-label="Gcore" className="inline-flex items-center">
+            <a href={withBasePath("/")} aria-label="Gcore" className="inline-flex items-center">
               <Image
-                src="/gcore-logo.svg"
+                src={withBasePath("/gcore-logo.svg")}
                 alt="Gcore"
                 width={128}
                 height={32}

@@ -6,6 +6,7 @@ import { toBlob, toPng } from "html-to-image";
 
 import type { ScoreResult } from "@/lib/scoring";
 import { trackEvent } from "@/lib/analytics";
+import { withBasePath } from "@/lib/asset-path";
 
 type ResultCardProps = {
   result: ScoreResult;
@@ -73,7 +74,7 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
             Gcore · AI Work Persona
           </span>
           <Image
-            src={persona.imagePath}
+            src={withBasePath(persona.imagePath)}
             alt={`${persona.name} character`}
             width={224}
             height={224}
