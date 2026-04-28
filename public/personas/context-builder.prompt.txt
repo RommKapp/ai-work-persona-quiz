@@ -1,0 +1,10 @@
+Create an original square character illustration for an internal company quiz result card.
+Persona: Context Builder.
+Main subject: a calm beaver builder mascot stacking documents, rules, examples, and puzzle pieces into a neat prompt tower, rounded friendly design, no human clothes, no gender cues, laptop nearby.
+Important inclusivity requirement: the image must not read as male or female. Use a non-human mascot, creature, animal, robot, ghost, cloud, or artifact. Avoid human characters, human skin, gendered hairstyles, dresses, suits, makeup, beards, eyelashes as a gender signal, and any gender-coded clothing.
+Mood: funny, clever, lightly skeptical about AI hype, warm and safe for workplace sharing.
+Composition: centered mascot, clean simple background, strong silhouette, enough empty space for a card layout.
+Style: modern soft vector illustration, rounded shapes, smooth gradients, Slack-friendly campaign art, crisp edges, polished but not sterile.
+Color palette: soft slate, stone, warm beige, light blue accents.
+Consistency: match the friendly soft-vector Prompt Goblin quiz character: expressive eyes, rounded shapes, clean background, playful office objects, no harsh shadows.
+Constraints: no text, no letters, no logos, no watermarks, no copyrighted characters, no realistic human, not scary, not childish, not corporate stock art.
