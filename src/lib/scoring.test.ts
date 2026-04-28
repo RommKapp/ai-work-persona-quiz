@@ -35,15 +35,15 @@ describe("calculateResult", () => {
     expect(result.personaId).toBe("context-builder");
   });
 
-  it("returns top recommended skills and tools from selected answers", () => {
+  it("returns top recommended tools from selected answers", () => {
     const result = calculateResult([
       { questionId: "weekly-report", optionId: "cron-task" },
       { questionId: "project-update", optionId: "jira-mcp" },
       { questionId: "personality", optionId: "connected-map" },
     ]);
 
-    expect(result.recommendedSkills).toContain("MCP HTU");
     expect(result.recommendedTools).toContain("Jira MCP");
+    expect(result.recommendedTools).toContain("Knowledge Base MCP");
     expect(result.recommendedTools.length).toBeLessThanOrEqual(5);
   });
 

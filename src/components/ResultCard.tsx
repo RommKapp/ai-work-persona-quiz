@@ -111,8 +111,7 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
           <InfoBlock title="Your blind spot" text={persona.blindSpot} />
         </div>
 
-        <div id="try-next" className="mt-6 grid gap-4 sm:grid-cols-2">
-          <TagList title="Try next" items={result.recommendedSkills} />
+        <div className="mt-6">
           <TagList title="Tools to explore" items={result.recommendedTools} />
         </div>
 
@@ -145,13 +144,6 @@ export function ResultCard({ result, onRestart }: ResultCardProps) {
           >
             {imageSaved ? "Image saved" : "Download image"}
           </button>
-          <a
-            href="#try-next"
-            onClick={() => trackEvent("learning_link_clicked", { persona: persona.id })}
-            className="rounded-full border border-[#251b29]/15 bg-[var(--brand-polar)] px-6 py-3 text-center font-semibold text-[var(--brand-ink)] transition hover:border-[var(--brand-orange)] hover:text-[var(--brand-orange)]"
-          >
-            See learning ideas
-          </a>
           <button
             type="button"
             onClick={onRestart}

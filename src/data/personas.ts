@@ -9,7 +9,6 @@ export const personas = [
       "You move fast and try many prompts. Sometimes AI answers perfectly. Sometimes it politely invents a small weather system.",
     superpower: "You turn messy first ideas into useful drafts before the second coffee.",
     blindSpot: "Context can arrive a bit late, usually after the AI has guessed the plot.",
-    recommendedSkills: ["Prompting Basics", "Thinking models", "GPTs"],
     recommendedTools: ["ChatGPT", "Claude Cowork / Code", "Gcore Brand Guidelines"],
     shareText:
       "I got Prompt Goblin. Fast prompts, tiny chaos, surprisingly useful output.",
@@ -24,7 +23,6 @@ export const personas = [
       "You know meetings create decisions, owners, and five versions of what people think happened. You want AI to catch the useful parts before they fade.",
     superpower: "You turn meeting fog into clear next steps.",
     blindSpot: "It is easy to attend the meeting and the recap of the meeting. Very advanced meeting behavior.",
-    recommendedSkills: ["Meeting Capture", "Voice Input", "Prompting Basics"],
     recommendedTools: ["Krisp / TL;DV", "Outlook & Calendar", "ChatGPT"],
     shareText:
       "I got Meeting Ghost. I haunt calendars, but in a helpful way.",
@@ -39,7 +37,6 @@ export const personas = [
       "You like finding the real answer. You ask for sources, compare options, and give the first answer a healthy side-eye.",
     superpower: "You make better decisions because facts get invited to the meeting.",
     blindSpot: "Research can become a very elegant way to delay sending the message.",
-    recommendedSkills: ["Deep Research", "Thinking models", "Scout, internal chatbot"],
     recommendedTools: ["ChatGPT", "BI", "Connectors: GDrive, Slack"],
     shareText:
       "I got Research Detective. I brought sources to a personality quiz.",
@@ -54,7 +51,6 @@ export const personas = [
       "You see repeated tasks and quietly take it personally. If a button gets clicked every Friday, you are already suspicious.",
     superpower: "You save time by teaching boring tasks to behave.",
     blindSpot: "Sometimes the process needs cleaning before it gets a tiny robot hat.",
-    recommendedSkills: ["Cron tasks", "GPTs", "Skills HTU"],
     recommendedTools: ["ChatGPT", "Chrome Extension", "Basic Anthropic Plugins"],
     shareText:
       "I got Automation Wizard. My favorite task is the one that stops asking for me.",
@@ -69,8 +65,7 @@ export const personas = [
       "You do not want to copy-paste from ten tabs like it is 2014. You want AI to work with HubSpot, Jira, Confluence, KB, Slack, or GDrive directly.",
     superpower: "You connect systems so work stops living in browser tabs.",
     blindSpot: "MCP makes sense to you. This is wonderful, and also not true for everyone yet.",
-    recommendedSkills: ["MCP HTU", "Skills HTU", "Prompting Basics"],
-    recommendedTools: ["HubSpot MCP", "Jira MCP", "Confluence MCP", "KB MCP"],
+    recommendedTools: ["HubSpot MCP", "Jira MCP", "Confluence MCP", "Knowledge Base MCP"],
     shareText:
       "I got Tool Connector. I believe tabs should talk to each other and leave me alone.",
     imagePath: "/personas/tool-connector.png",
@@ -84,7 +79,6 @@ export const personas = [
       "You know AI works better with context, files, examples, and rules. You are the person who brings receipts to a prompt.",
     superpower: "You get better outputs because the input is not a mystery novel.",
     blindSpot: "Sometimes preparing the context becomes the task. The AI waits politely.",
-    recommendedSkills: ["Prompting Basics", "Skills HTU", "Claude Cowork HTU"],
     recommendedTools: ["ChatGPT", "Claude Cowork / Code", "Gcore Brand Guidelines"],
     shareText:
       "I got Context Builder. I bring files, rules, and a suspiciously organized prompt.",
@@ -99,7 +93,6 @@ export const personas = [
       "You do not only ask AI to write text. You ask it to compare options, find risks, and think until the simple task starts wearing glasses.",
     superpower: "You make complex choices clearer before they become calendar drama.",
     blindSpot: "A small task may not need a three-act reasoning journey.",
-    recommendedSkills: ["Thinking models", "Deep Research", "Prompting Basics"],
     recommendedTools: ["ChatGPT", "Claude Cowork / Code", "BI"],
     shareText:
       "I got Thinking Partner. I asked AI to think, then questioned the thinking.",
@@ -114,7 +107,6 @@ export const personas = [
       "You like trying new tools. Your browser history looks like a small AI trade show, but you learn fast.",
     superpower: "You bring new ideas before the rest of us find the settings page.",
     blindSpot: "A tool can be exciting and still not deserve a permanent tab.",
-    recommendedSkills: ["GPTs", "Skills HTU", "Claude Cowork HTU"],
     recommendedTools: ["ChatGPT", "Claude Cowork / Code", "Gcore Deck Skill"],
     shareText:
       "I got Tool Explorer. My browser has many tabs, and at least three are important.",

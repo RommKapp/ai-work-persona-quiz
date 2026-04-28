@@ -8,19 +8,6 @@ export type PersonaId =
   | "thinking-partner"
   | "tool-explorer";
 
-export type Skill =
-  | "Prompting Basics"
-  | "Claude Cowork HTU"
-  | "Voice Input"
-  | "MCP HTU"
-  | "Skills HTU"
-  | "Meeting Capture"
-  | "Scout, internal chatbot"
-  | "Deep Research"
-  | "Cron tasks"
-  | "GPTs"
-  | "Thinking models";
-
 export type Tool =
   | "ChatGPT"
   | "Claude Cowork / Code"
@@ -31,7 +18,7 @@ export type Tool =
   | "HubSpot MCP"
   | "Confluence MCP"
   | "Jira MCP"
-  | "KB MCP"
+  | "Knowledge Base MCP"
   | "BI"
   | "Chrome Extension"
   | "Gcore Deck Skill"
@@ -46,7 +33,6 @@ export type Persona = {
   description: string;
   superpower: string;
   blindSpot: string;
-  recommendedSkills: Skill[];
   recommendedTools: Tool[];
   shareText: string;
   imagePath: string;
@@ -57,7 +43,6 @@ export type AnswerOption = {
   id: string;
   text: string;
   scores: Partial<Record<PersonaId, number>>;
-  skills: Skill[];
   tools: Tool[];
 };
 

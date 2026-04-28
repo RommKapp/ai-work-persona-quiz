@@ -5,7 +5,6 @@ import type {
   Persona,
   PersonaId,
   SelectedAnswer,
-  Skill,
   Tool,
 } from "@/data/types";
 
@@ -13,7 +12,6 @@ export type ScoreResult = {
   personaId: PersonaId;
   persona: Persona;
   scores: Record<PersonaId, number>;
-  recommendedSkills: Skill[];
   recommendedTools: Tool[];
 };
 
@@ -42,7 +40,6 @@ const uniqueTopItems = <T extends string>(items: T[], limit: number): T[] => {
 
 export const calculateResult = (answers: SelectedAnswer[]): ScoreResult => {
   const scores = initialScores();
-  const skillTags: Skill[] = [];
   const toolTags: Tool[] = [];
   let latestHighValuePersona: PersonaId | undefined;
 
@@ -53,7 +50,6 @@ export const calculateResult = (answers: SelectedAnswer[]): ScoreResult => {
       return;
     }
 
-    option.skills.forEach((skill) => skillTags.push(skill));
     option.tools.forEach((tool) => toolTags.push(tool));
 
     Object.entries(option.scores).forEach(([personaId, value]) => {
@@ -79,7 +75,6 @@ export const calculateResult = (answers: SelectedAnswer[]): ScoreResult => {
     personaId,
     persona: personaById[personaId],
     scores,
-    recommendedSkills: uniqueTopItems(skillTags, 3),
     recommendedTools: uniqueTopItems(toolTags, 5),
   };
 };
